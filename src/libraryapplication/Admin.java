@@ -9,8 +9,15 @@ package libraryapplication;
  *
  * @author RC_Student_lab
  */
-// Child class (Inheritance)
-public class Admin
-{
 
+
+// Child class 
+class Admin extends User 
+{
+    public Admin(String username, String password) 
+    {
+        super(username, password);
+    }
+    
+    
 }
