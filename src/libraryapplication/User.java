@@ -20,6 +20,11 @@ public class User
         this.username = username;
         this.password = password;
     }
+    
+    public boolean login(String u, String p) 
+    {
+        return username.equals(u) && password.equals(p);
+    }
 
     
     
