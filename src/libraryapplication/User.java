@@ -21,11 +21,18 @@ public class User
         this.password = password;
     }
     
+    
+    // login method (accepts any username & password)
     public boolean login(String u, String p) 
     {
-        return username.equals(u) && password.equals(p);
+        this.username = u;   // store whoever logged in
+        this.password = p;   // store the entered password
+        return true;         // always returns true
     }
 
+    public String getUsername() {
+        return username;
+    }
     
     
 }

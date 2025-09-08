@@ -22,7 +22,7 @@ public class LibraryApplication
     public static void main(String[] args) 
     {
         // Create admin
-        Admin admin = new Admin("admin", "1234");
+        Admin admin = new Admin(" ", " ");
 
         // Login
         System.out.println("==== Library Login ====");
