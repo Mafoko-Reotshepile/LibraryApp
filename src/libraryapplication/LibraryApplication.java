@@ -31,7 +31,8 @@ public class LibraryApplication
         System.out.print("Enter password: ");
         String pass = sc.nextLine();
 
-        if (!admin.login(user, pass)) {
+        if (!admin.login(user, pass)) 
+        {
             System.out.println("Invalid login. Exiting...");
             return;
         }
@@ -60,7 +61,68 @@ public class LibraryApplication
         } while (choice != 5);
         
     }
+        //Method to add books
+        private static void addBook() 
+        {
+        System.out.print("Enter Book ID: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+        System.out.print("Enter Title: ");
+        String title = sc.nextLine();
+        System.out.print("Enter Author: ");
+        String author = sc.nextLine();
+
+        books.add(new Book(id, title, author));
+        System.out.println("Book added successfully!");
+        }
+
+        //Search book method
+        private static void searchBook() 
+        {
+           System.out.print("Enter title to search: ");
+           String title = sc.nextLine();
         
+        boolean found = false;
+
+        for (Book b : books) 
+        {
+            if (b.getTitle().equalsIgnoreCase(title)) 
+            {
+                System.out.println("Found: " + b);
+                found = true;
+                break;
+            }
+        }
+        if (!found) System.out.println("Book not found!");
+    }
+
+    //Delete books
+    private static void deleteBook() 
+    {
+        System.out.print("Enter Book ID to delete: ");
+        int id = sc.nextInt();
+        sc.nextLine();
+
+        books.removeIf(b -> b.getId() == id);
+        System.out.println("Book deleted (if existed).");
+    }
+
+    //View the report
+    private static void viewReport() 
+    {
+        System.out.println("\n==== Library Report ====");
+        if (books.isEmpty()) 
+        {
+            System.out.println("No books available.");
+        } else 
+        {
+            for (Book b : books) 
+            {
+                System.out.println(b);
+            }
+        }
+        
+    }    
         
     }//End of main method
         
